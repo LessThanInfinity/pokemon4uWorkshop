@@ -1,5 +1,6 @@
 let isLightOn = true;
 let isApplianceOn = isLightOn ? true : false;
+//=============
 
 type weakness = "Fire" | "Water" | "Air";
 type testWeak = "Water";
@@ -10,6 +11,7 @@ type TestElement = "water";
 
 type ElementType = TestElement extends BasicElement ? BasicElement : never;
 
+//===========
 type Insect = {
   /* ... */
 };
