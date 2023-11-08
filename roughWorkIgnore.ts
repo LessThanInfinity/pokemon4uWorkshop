@@ -1,10 +1,6 @@
-
-
-
-
 // A extends { trait: T} ? A : never
 
-type DocilePkmn2 = GetDocile2<AvailablePokemonHash, "Cute">
+type DocilePkmn2 = GetDocile2<AvailablePokemonHash, "Cute">;
 
 type Values<T> = T[keyof T];
 // type GetWeakTo<A, T extends Type> = Values<{
@@ -39,28 +35,6 @@ type t_ = _t extends { name: "one" } ? _t : never;
 
 // question: Find me a pokemon that is not weak to ice  and not weak to water.
 // Return an array of the types avaiable taht are not this weak.
-
-///==== test worksheet
-type weakness = "Fire" | "Water" | "Air";
-type testWeak = "Water";
-type testProp = testWeak extends weakness ? "a" : "b";
-
-type BasicElement = "air" | "water" | "fire" | "earth";
-type TestElement = "water";
-
-type ElementType = TestElement extends BasicElement ? BasicElement : never;
-
-type Insect = { ... };
-type Arthropod = { ... };
-
-type UnknownCreature = {
-  numberOfLegs: 8;
-};
-
-type TypeOfCreature = UnknownCreature extends { numberOfLegs: 8 }
-  ? Arthropod
-  : Insect;
-
 
 // type hashTypes = {
 //   element: Elem;
@@ -106,4 +80,3 @@ type TypeOfCreature = UnknownCreature extends { numberOfLegs: 8 }
 
 // type X3 = Includes<readonly [1, 2], 1>;
 // type X4 = keyof [1, 2];
-
