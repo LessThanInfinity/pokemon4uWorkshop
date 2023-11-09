@@ -4,7 +4,39 @@
   As new initiates, you must master the task of providing our clients a list of available pokemon that caters to their specific needs. 
 */
 
-type Move =
+import {
+  Bulbasaur,
+  Charmander,
+  Squirtle,
+  Pikachu,
+  Caterpie,
+  Weedle,
+  Clefairy,
+  Jigglypuff,
+  Vulpix,
+  Psyduck,
+  Meowth,
+  Poliwag,
+  Abra,
+  Machop,
+  Bellsprout,
+  Tentacool,
+  Geodude,
+  Ponyta,
+  Slowpoke,
+  Magnemite,
+  Farfetchd,
+  Doduo,
+  Seel,
+  Snorlax,
+  Dratini,
+  Eevee,
+  Staryu,
+  Hitmonlee,
+  Hitmonchan,
+} from "./pokedex";
+
+export type Move =
   | "Agility"
   | "Body Slam"
   | "Defense Curl"
@@ -40,7 +72,7 @@ type Move =
   | "String Shot"
   | "Water Gun";
 
-type Trait =
+export type Trait =
   | "Hardy"
   | "Lonely"
   | "Docile"
@@ -83,7 +115,7 @@ type Trait =
   | "Cute"
   | "Quirky";
 
-interface Weakness {
+export interface Weakness {
   Normal: "Fighting";
   Fire: "Water" | "Ground" | "Rock";
   Water: "Grass" | "Electric";
@@ -104,7 +136,7 @@ interface Weakness {
   Fairy: "Poison" | "Steel";
 }
 
-type Type =
+export type Type =
   | "Normal"
   | "Fire"
   | "Water"
@@ -125,7 +157,7 @@ type Type =
   | "Fairy";
 
 /* Check pokedex.ts for the details on each, and the Pokemon Type */
-type AvailablePokemon =
+export type AvailablePokemon =
   | Bulbasaur
   | Charmander
   | Squirtle

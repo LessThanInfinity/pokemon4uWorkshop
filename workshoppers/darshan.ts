@@ -5,6 +5,8 @@
 //   trait: Trait;
 // }
 
+import { AvailablePokemon, Move, Trait, Type } from "..";
+
 //======== Client #1: Get Cute
 type GetDocile<A, T1 extends Trait> = A extends { trait: T1 } ? A : never;
 

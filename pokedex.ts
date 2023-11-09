@@ -1,9 +1,11 @@
-/* Type to validate weaknessByType */
+import { Move, Trait, Type, Weakness } from ".";
+
+export /* Type to validate weaknessByType */
 type WeaknessByType<T extends [Type] | [Type, Type]> = {
   [K in keyof T]: Weakness[T[K]];
 }[number];
 
-type Pokemon<T extends [Type] | [Type, Type]> = {
+export type Pokemon<T extends [Type] | [Type, Type]> = {
   moves: Move[];
   type: T;
   weakness: WeaknessByType<T>;
@@ -12,7 +14,7 @@ type Pokemon<T extends [Type] | [Type, Type]> = {
 
 // Pokemon starts here:
 
-type Bulbasaur = Pokemon<["Grass", "Poison"]> & {
+export type Bulbasaur = Pokemon<["Grass", "Poison"]> & {
   name: "Bulbasaur";
   type: ["Grass", "Poison"];
   weakness: "Poison" | "Fire" | "Flying" | "Ground" | "Psychic" | "Ice" | "Bug";
@@ -20,7 +22,7 @@ type Bulbasaur = Pokemon<["Grass", "Poison"]> & {
   trait: "Hardy";
 };
 
-type Charmander = Pokemon<["Fire"]> & {
+export type Charmander = Pokemon<["Fire"]> & {
   name: "Charmander";
   type: ["Fire"];
   weakness: "Water" | "Ground" | "Rock";
@@ -28,7 +30,7 @@ type Charmander = Pokemon<["Fire"]> & {
   trait: "Lonely";
 };
 
-type Squirtle = Pokemon<["Water"]> & {
+export type Squirtle = Pokemon<["Water"]> & {
   name: "Squirtle";
   type: ["Water"];
   weakness: "Grass" | "Electric";
@@ -36,7 +38,7 @@ type Squirtle = Pokemon<["Water"]> & {
   trait: "Docile";
 };
 
-type Pikachu = Pokemon<["Electric"]> & {
+export type Pikachu = Pokemon<["Electric"]> & {
   name: "Pikachu";
   type: ["Electric"];
   weakness: "Ground";
@@ -44,7 +46,7 @@ type Pikachu = Pokemon<["Electric"]> & {
   trait: "Cute";
 };
 
-type Caterpie = Pokemon<["Bug"]> & {
+export type Caterpie = Pokemon<["Bug"]> & {
   name: "Caterpie";
   type: ["Bug"];
   weakness: "Fire" | "Flying" | "Rock";
@@ -52,7 +54,7 @@ type Caterpie = Pokemon<["Bug"]> & {
   trait: "Cute";
 };
 
-type Weedle = Pokemon<["Bug", "Poison"]> & {
+export type Weedle = Pokemon<["Bug", "Poison"]> & {
   name: "Weedle";
   type: ["Bug", "Poison"];
   weakness: "Fire" | "Flying" | "Ground" | "Rock" | "Psychic";
@@ -60,7 +62,7 @@ type Weedle = Pokemon<["Bug", "Poison"]> & {
   trait: "Hasty";
 };
 
-type Clefairy = Pokemon<["Fairy"]> & {
+export type Clefairy = Pokemon<["Fairy"]> & {
   name: "Clefairy";
   type: ["Fairy"];
   weakness: "Poison" | "Steel";
@@ -68,7 +70,7 @@ type Clefairy = Pokemon<["Fairy"]> & {
   trait: "Jolly";
 };
 
-type Jigglypuff = Pokemon<["Normal", "Fairy"]> & {
+export type Jigglypuff = Pokemon<["Normal", "Fairy"]> & {
   name: "Jigglypuff";
   type: ["Normal", "Fairy"];
   weakness: "Fighting" | "Poison" | "Steel";
@@ -76,7 +78,7 @@ type Jigglypuff = Pokemon<["Normal", "Fairy"]> & {
   trait: "Calm";
 };
 
-type Vulpix = Pokemon<["Fire"]> & {
+export type Vulpix = Pokemon<["Fire"]> & {
   name: "Vulpix";
   type: ["Fire"];
   weakness: "Water" | "Ground" | "Rock";
@@ -84,7 +86,7 @@ type Vulpix = Pokemon<["Fire"]> & {
   trait: "Timid";
 };
 
-type Psyduck = Pokemon<["Water"]> & {
+export type Psyduck = Pokemon<["Water"]> & {
   name: "Psyduck";
   type: ["Water"];
   weakness: "Grass" | "Electric";
@@ -92,7 +94,7 @@ type Psyduck = Pokemon<["Water"]> & {
   trait: "Sassy";
 };
 
-type Meowth = Pokemon<["Normal"]> & {
+export type Meowth = Pokemon<["Normal"]> & {
   name: "Meowth";
   type: ["Normal"];
   weakness: "Fighting";
@@ -100,7 +102,7 @@ type Meowth = Pokemon<["Normal"]> & {
   trait: "Adamant";
 };
 
-type Poliwag = Pokemon<["Water"]> & {
+export type Poliwag = Pokemon<["Water"]> & {
   name: "Poliwag";
   type: ["Water"];
   weakness: "Grass" | "Electric";
@@ -108,7 +110,7 @@ type Poliwag = Pokemon<["Water"]> & {
   trait: "Lax";
 };
 
-type Abra = Pokemon<["Psychic"]> & {
+export type Abra = Pokemon<["Psychic"]> & {
   name: "Abra";
   type: ["Psychic"];
   weakness: "Bug" | "Ghost" | "Dark";
@@ -116,7 +118,7 @@ type Abra = Pokemon<["Psychic"]> & {
   trait: "Mild";
 };
 
-type Machop = Pokemon<["Fighting"]> & {
+export type Machop = Pokemon<["Fighting"]> & {
   name: "Machop";
   type: ["Fighting"];
   weakness: "Flying" | "Psychic" | "Fairy";
@@ -124,7 +126,7 @@ type Machop = Pokemon<["Fighting"]> & {
   trait: "Naive";
 };
 
-type Bellsprout = Pokemon<["Grass", "Poison"]> & {
+export type Bellsprout = Pokemon<["Grass", "Poison"]> & {
   name: "Bellsprout";
   type: ["Grass", "Poison"];
   weakness: "Ground" | "Fire" | "Ice" | "Poison" | "Flying" | "Bug" | "Psychic";
@@ -132,7 +134,7 @@ type Bellsprout = Pokemon<["Grass", "Poison"]> & {
   trait: "Calm";
 };
 
-type Tentacool = Pokemon<["Water", "Poison"]> & {
+export type Tentacool = Pokemon<["Water", "Poison"]> & {
   name: "Tentacool";
   type: ["Water", "Poison"];
   weakness: "Ground" | "Grass" | "Electric" | "Psychic";
@@ -140,7 +142,7 @@ type Tentacool = Pokemon<["Water", "Poison"]> & {
   trait: "Modest";
 };
 
-type Geodude = Pokemon<["Rock", "Ground"]> & {
+export type Geodude = Pokemon<["Rock", "Ground"]> & {
   name: "Geodude";
   type: ["Rock", "Ground"];
   weakness: "Fighting" | "Water" | "Ground" | "Grass" | "Ice" | "Steel";
@@ -148,7 +150,7 @@ type Geodude = Pokemon<["Rock", "Ground"]> & {
   trait: "Hasty";
 };
 
-type Ponyta = Pokemon<["Fire"]> & {
+export type Ponyta = Pokemon<["Fire"]> & {
   name: "Ponyta";
   type: ["Fire"];
   weakness: "Water" | "Ground" | "Rock";
@@ -156,7 +158,7 @@ type Ponyta = Pokemon<["Fire"]> & {
   trait: "Gentle";
 };
 
-type Slowpoke = Pokemon<["Water", "Psychic"]> & {
+export type Slowpoke = Pokemon<["Water", "Psychic"]> & {
   name: "Slowpoke";
   type: ["Water", "Psychic"];
   weakness: "Grass" | "Electric" | "Bug" | "Ghost" | "Dark";
@@ -164,7 +166,7 @@ type Slowpoke = Pokemon<["Water", "Psychic"]> & {
   trait: "Rash";
 };
 
-type Magnemite = Pokemon<["Electric", "Steel"]> & {
+export type Magnemite = Pokemon<["Electric", "Steel"]> & {
   name: "Magnemite";
   type: ["Electric", "Steel"];
   weakness: "Fighting" | "Ground" | "Fire";
@@ -172,7 +174,7 @@ type Magnemite = Pokemon<["Electric", "Steel"]> & {
   trait: "Sassy";
 };
 
-type Farfetchd = Pokemon<["Normal", "Flying"]> & {
+export type Farfetchd = Pokemon<["Normal", "Flying"]> & {
   name: "Farfetchd";
   type: ["Normal", "Flying"];
   weakness: "Fighting" | "Rock" | "Electric" | "Ice";
@@ -180,7 +182,7 @@ type Farfetchd = Pokemon<["Normal", "Flying"]> & {
   trait: "Timid";
 };
 
-type Doduo = Pokemon<["Normal", "Flying"]> & {
+export type Doduo = Pokemon<["Normal", "Flying"]> & {
   name: "Doduo";
   type: ["Normal", "Flying"];
   weakness: "Fighting" | "Rock" | "Electric" | "Ice";
@@ -188,7 +190,7 @@ type Doduo = Pokemon<["Normal", "Flying"]> & {
   trait: "Lax";
 };
 
-type Seel = Pokemon<["Water"]> & {
+export type Seel = Pokemon<["Water"]> & {
   name: "Seel";
   type: ["Water"];
   weakness: "Grass" | "Electric";
@@ -196,7 +198,7 @@ type Seel = Pokemon<["Water"]> & {
   trait: "Cute";
 };
 
-type Snorlax = Pokemon<["Normal"]> & {
+export type Snorlax = Pokemon<["Normal"]> & {
   name: "Snorlax";
   type: ["Normal"];
   weakness: "Fighting";
@@ -204,7 +206,7 @@ type Snorlax = Pokemon<["Normal"]> & {
   trait: "Brave";
 };
 
-type Dratini = Pokemon<["Dragon"]> & {
+export type Dratini = Pokemon<["Dragon"]> & {
   name: "Dratini";
   type: ["Dragon"];
   weakness: "Ice" | "Fairy" | "Dragon";
@@ -212,7 +214,7 @@ type Dratini = Pokemon<["Dragon"]> & {
   trait: "Hasty";
 };
 
-type Eevee = Pokemon<["Normal"]> & {
+export type Eevee = Pokemon<["Normal"]> & {
   name: "Eevee";
   type: ["Normal"];
   weakness: "Fighting";
@@ -220,7 +222,7 @@ type Eevee = Pokemon<["Normal"]> & {
   trait: "Mild";
 };
 
-type Staryu = Pokemon<["Water"]> & {
+export type Staryu = Pokemon<["Water"]> & {
   name: "Staryu";
   type: ["Water"];
   weakness: "Grass" | "Electric";
@@ -228,7 +230,7 @@ type Staryu = Pokemon<["Water"]> & {
   trait: "Naughty";
 };
 
-type Hitmonlee = Pokemon<["Fighting"]> & {
+export type Hitmonlee = Pokemon<["Fighting"]> & {
   name: "Hitmonlee";
   type: ["Fighting"];
   weakness: "Flying" | "Psychic" | "Fairy";
@@ -236,7 +238,7 @@ type Hitmonlee = Pokemon<["Fighting"]> & {
   trait: "Naughty";
 };
 
-type Hitmonchan = Pokemon<["Fighting"]> & {
+export type Hitmonchan = Pokemon<["Fighting"]> & {
   name: "Hitmonchan";
   type: ["Fighting"];
   weakness: "Flying" | "Psychic" | "Fairy";

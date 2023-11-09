@@ -1,3 +1,5 @@
+// HAHAHAHA I'M LOOKING AT IT DARSHAN
+
 // A extends { trait: T} ? A : never
 
 type DocilePkmn2 = GetDocile2<AvailablePokemonHash, "Cute">;
